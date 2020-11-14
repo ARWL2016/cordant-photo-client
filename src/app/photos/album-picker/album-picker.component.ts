@@ -15,7 +15,7 @@ export class AlbumPickerComponent implements OnInit {
 
   @Output() selectAlbum = new EventEmitter<number>();
 
-  public albumId = new FormControl();
+  public albumIdCtrl = new FormControl();
   public subscription: Subscription;
 
   constructor() { }
@@ -29,10 +29,14 @@ export class AlbumPickerComponent implements OnInit {
   }
 
   private listenToChanges() {
-    this.subscription = this.albumId.valueChanges.subscribe((id: number) => {
-      console.log(id);
+    this.subscription = this.albumIdCtrl.valueChanges.subscribe((id: number) => {
       this.selectAlbum.emit(id);
     })
+  }
+
+  public resetControl() {
+    this.albumIdCtrl.reset(null, {emitEvent: false});
+
   }
 
 }

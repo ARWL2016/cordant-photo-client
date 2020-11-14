@@ -1,13 +1,20 @@
-<div>
-  <h2>{{ user.name }}</h2>
-  <mat-form-field appearance="fill">
+<div class="component-container">
+
+  <p class="user-name">{{ user.name }}</p>
+
+  <!-- Angular Material Select (https://material.angular.io/components/select/overview) -->
+  <mat-form-field appearance="outline" color="primary">
     <mat-label>Choose an Album</mat-label>
-    <mat-select [formControl]="albumId">
+    <mat-select [formControl]="albumIdCtrl">
       <mat-option *ngFor="let album of albums" [value]="album.id">
         {{ album.title }}
       </mat-option>
     </mat-select>
   </mat-form-field>
+
+  <div class="spacer"></div>
+
+
 </div>
 
 

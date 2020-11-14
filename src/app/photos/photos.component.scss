@@ -1,0 +1,30 @@
+@import 'variables';
+
+.actions {
+    padding: 20px;
+    background-color: $backgroundGrey;
+    display: flex;
+    align-items: center;
+
+    mat-icon:hover {
+        cursor: pointer;
+    }
+}
+
+.column-container {
+    display: flex;
+
+    .left, .right {
+        padding: 10px;
+        // border: 1px dotted blue;
+    }
+
+    .left {
+        width: 20%;
+        min-width: 300px;
+    }
+
+    .right {
+        width: 80%;
+    }
+}

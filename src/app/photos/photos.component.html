@@ -1,11 +1,26 @@
 <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 
-<p>
-  photos works!
-</p>
+<main>
+  <section class="actions">
+    <mat-icon (click)="back()">arrow_back</mat-icon>
+  </section>
+  <div class="column-container">
 
-<cor-user-list [users]="users" (selectUser)="selectUser($event)"></cor-user-list>
+    <!-- Left Column -->
+    <section class="left">
+      <cor-user-list [users]="users" (selectUser)="selectUser($event)"></cor-user-list>
+    </section>
 
-<cor-album-picker *ngIf="albums" [user]="selectedUser" [albums]="albums" (selectAlbum)="selectAlbum($event)"></cor-album-picker>
+    <!-- Right Column -->
+    <section class="right">
+      <cor-album-picker #picker *ngIf="albums" [user]="selectedUser" [albums]="albums" (selectAlbum)="selectAlbum($event)"></cor-album-picker>
 
-<cor-photo-gallery *ngIf="photos" [photos]="photos"></cor-photo-gallery>
+      <cor-photo-gallery *ngIf="photos" [photos]="photos"></cor-photo-gallery>
+    </section>
+  </div>
+</main>
+
+
+
+
+
