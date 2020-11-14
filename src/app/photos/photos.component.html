@@ -1,3 +1,11 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
 <p>
   photos works!
 </p>
+
+<cor-user-list [users]="users" (selectUser)="selectUser($event)"></cor-user-list>
+
+<cor-album-picker *ngIf="albums" [user]="selectedUser" [albums]="albums" (selectAlbum)="selectAlbum($event)"></cor-album-picker>
+
+<cor-photo-gallery *ngIf="photos" [photos]="photos"></cor-photo-gallery>
