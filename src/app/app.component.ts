@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'cor-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cordant-photo-client';
+
+  constructor(
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    // this.router.navigate(['welcome']);
+  }
+
+ 
 }
