@@ -1,7 +1,10 @@
-<div class="photo-album-container">
-  
-  <div *ngFor="let photo of photos" class="photo-container">
-    <img [src]="photo.thumbnailUrl">
+<div class="component-container">
 
-  </div>
+  <div class="album-container">
+  
+    <div *ngFor="let photo of photos" class="photo-container">
+      <img [src]="photo.thumbnailUrl">
+
+    </div>
+  </div>  
 </div>

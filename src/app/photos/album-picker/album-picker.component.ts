@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Album, User } from 'src/app/_core/types/server';
@@ -6,7 +6,8 @@ import { Album, User } from 'src/app/_core/types/server';
 @Component({
   selector: 'cor-album-picker',
   templateUrl: './album-picker.component.html',
-  styleUrls: ['./album-picker.component.scss']
+  styleUrls: ['./album-picker.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlbumPickerComponent implements OnInit {
 

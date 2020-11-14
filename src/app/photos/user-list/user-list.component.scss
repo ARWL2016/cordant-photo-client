@@ -9,3 +9,18 @@ table {
     border: 1px solid $borderGrey;
     width: 100%;
 }
+
+.selected {
+    background-color: $primary;
+    color: white;
+
+    td {
+        color: white;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    table {
+        width: 90%;
+    }
+}

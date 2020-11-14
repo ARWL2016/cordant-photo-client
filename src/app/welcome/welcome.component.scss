@@ -1,0 +1,29 @@
+@import 'variables';
+
+.component-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+
+    div {
+        margin: 20px;
+    }
+}
+
+h1 {
+    color: $primary;
+}
+
+h1, p {
+    margin: 10px 0;
+}
+
+button {
+    margin-top: 20px;
+}

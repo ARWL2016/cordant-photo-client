@@ -1,24 +1,26 @@
-<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 
-<!-- <main> -->
-  <section class="actions">
-    <mat-icon (click)="back()">arrow_back</mat-icon>
+<div *ngIf="loading" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<section class="actions">
+  <mat-icon (click)="back()">arrow_back</mat-icon>
+</section>
+
+<div class="column-container">
+
+  <!-- Left Column -->
+  <section class="left">
+    <cor-user-list [users]="users" [selectedUser]="selectedUser" (selectUser)="selectUser($event)"></cor-user-list>
   </section>
-  <div class="column-container">
 
-    <!-- Left Column -->
-    <section class="left">
-      <cor-user-list [users]="users" (selectUser)="selectUser($event)"></cor-user-list>
-    </section>
+  <!-- Right Column -->
+  <section class="right">
+    <cor-album-picker #picker *ngIf="albums" [user]="selectedUser" [albums]="albums" (selectAlbum)="selectAlbum($event)"></cor-album-picker>
 
-    <!-- Right Column -->
-    <section class="right">
-      <cor-album-picker #picker *ngIf="albums" [user]="selectedUser" [albums]="albums" (selectAlbum)="selectAlbum($event)"></cor-album-picker>
-
-      <cor-photo-gallery *ngIf="photos" [photos]="photos"></cor-photo-gallery>
-    </section>
-  </div>
-<!-- </main> -->
+    <cor-photo-gallery *ngIf="photos" [photos]="photos"></cor-photo-gallery>
+  </section>
+</div>
 
 
 

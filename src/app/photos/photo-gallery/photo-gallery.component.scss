@@ -1,6 +1,17 @@
-
-
 .photo-container {
     display: inline-flex;
     margin: 5px;
+}
+
+@media screen and (max-width: 580px) {
+
+   .component-container {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+
+   .album-container {
+        max-width: 90%;
+   }
 }
