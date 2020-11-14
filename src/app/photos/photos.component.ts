@@ -41,7 +41,6 @@ export class PhotosComponent implements OnInit {
       this.selectedUser = user;
       this.loadUserAlbums(user.id);
     }
-    
   }
 
   public selectAlbum(id: number) {

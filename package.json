@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "dev": "lite-server --baseDir=dist/cordant-photo-client"
+    "dev": "lite-server --baseDir=dist/cordant-photo-client",
+    "deploy": "ng build --prod --base-href=https://arwl2016.github.io/cordant-photo-client/"
+    
   },
   "private": true,
   "dependencies": {
