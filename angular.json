@@ -32,7 +32,9 @@
               "src/styles/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles/"]
+              "includePaths": [
+                "src/styles/"
+              ]
             },
             "scripts": []
           },
@@ -126,6 +128,10 @@
               "devServerTarget": "cordant-photo-client:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
