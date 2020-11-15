@@ -10,7 +10,7 @@ On GitHub Pages
 This is deployed as a static web app with requests to JSON placeholder from the client. However, due to CORS errors, this needs a browser plugin to work, such as CORS Unblock (https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en) 
 https://arwl2016.github.io/cordant-photo-client/ 
 
-### To run locally
+### To run locally from /dist
 - clone repo
 - `npm install`
 - `npm start`
