@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, 
+    CommonModule,
     ReactiveFormsModule,
     MaterialModule
   ],

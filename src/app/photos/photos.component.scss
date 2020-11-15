@@ -29,7 +29,7 @@
 }
 
 .spinner-container {
-    height: calc(100vh - 60px);
+    height: calc(100vh - #{$topNavHeight});
     width: 100%;
     position: absolute;
     display: flex;
@@ -56,9 +56,6 @@ mat-spinner {
 
         .left, .right {
             width: 100%;
-        }
-
-        .left {
         }
     }
 }

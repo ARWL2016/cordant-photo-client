@@ -1,12 +1,13 @@
 ## Cordant Photo Client
 
-This is a photo app prototype built with Angular, Angular Material and using the JSON placeholder API
+This is a photo app prototype built with Angular v.9, Angular Material and using the JSON placeholder API
 
 
 ### To run locally 
 - clone repo
 - `npm install`
-- `ng serve`
+- `ng serve` or `npm start`
+- open `localhost:4200` in browser
 
 
 ## deploy 

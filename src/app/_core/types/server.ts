@@ -1,3 +1,5 @@
+// Define server side entities
+
 export interface Album {
     id: number;
     title: string;
@@ -14,7 +16,7 @@ export interface Photo {
 
 export interface User {
     address: Address;
-    company: Company
+    company: Company;
     email: string;
     id: number;
     name: string;
@@ -32,9 +34,9 @@ export interface Company {
 export interface Address {
     city: string;
     geo: {
-        lat: string, 
+        lat: string;
         lng: string;
-    }
+    };
     street: string;
     suite: string;
     zipcode: string;

@@ -1,22 +1,23 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+/**
+ *  Display welcome page.
+ */
+
 @Component({
-  selector: 'app-welcome',
+  selector: 'cor-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent {
 
   constructor(
     private router: Router
   ) { }
 
-  ngOnInit() {
-  }
-
-  login() {
+  public enter() {
     this.router.navigate(['photos']);
   }
 

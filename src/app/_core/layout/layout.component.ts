@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+/**
+ *  Display app navigation features (top nav) and outlet for child routes
+ */
+
 @Component({
-  selector: 'app-layout',
+  selector: 'cor-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
   constructor(
     private router: Router
   ) { }
 
-  ngOnInit() {
-  }
-
-  exit() {
+  public exit() {
     this.router.navigate(['welcome']);
   }
 

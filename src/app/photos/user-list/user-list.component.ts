@@ -1,5 +1,10 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { User } from 'src/app/_core/types/server';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from '@type/server';
+
+/**
+ *  Display a table of users
+ *  Emit a selected user
+ */
 
 @Component({
   selector: 'cor-user-list',
@@ -7,19 +12,16 @@ import { User } from 'src/app/_core/types/server';
   styleUrls: ['./user-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent  {
 
   @Input() users: User[];
   @Input() selectedUser: User;
 
-  @Output() selectUser = new EventEmitter<User>()
+  @Output() selectUser = new EventEmitter<User>();
 
   readonly displayedColumns = ['name'];
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
   public selectRow(user: User)  {
     this.selectUser.emit(user);

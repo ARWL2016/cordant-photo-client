@@ -1,7 +1,11 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Album, User } from 'src/app/_core/types/server';
+import { Album, User } from '@type/server';
+
+/**
+ * Display selected user and a select control of user's albums
+ */
 
 @Component({
   selector: 'cor-album-picker',
@@ -9,7 +13,7 @@ import { Album, User } from 'src/app/_core/types/server';
   styleUrls: ['./album-picker.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AlbumPickerComponent implements OnInit {
+export class AlbumPickerComponent implements OnInit, OnDestroy {
 
   @Input() user: User;
   @Input() albums: Album[];
@@ -29,15 +33,14 @@ export class AlbumPickerComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
+  public resetControl() {
+    this.albumIdCtrl.reset(null, {emitEvent: false});
+  }
+
   private listenToChanges() {
     this.subscription = this.albumIdCtrl.valueChanges.subscribe((id: number) => {
       this.selectAlbum.emit(id);
-    })
-  }
-
-  public resetControl() {
-    this.albumIdCtrl.reset(null, {emitEvent: false});
-
+    });
   }
 
 }

@@ -1,5 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Photo } from 'src/app/_core/types/server';
+import { Photo } from '@type/server';
+
+/**
+ *  Display a grid of photos
+ */
 
 @Component({
   selector: 'cor-photo-gallery',

@@ -9,7 +9,7 @@ import { PhotoGalleryComponent } from './photo-gallery/photo-gallery.component';
 
 const routes: Routes = [
   {
-    path: '', component: PhotosComponent, 
+    path: '', component: PhotosComponent,
   }
 ];
 

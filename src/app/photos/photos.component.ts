@@ -1,13 +1,18 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AlbumDataService } from '../_core/data/album-data.service';
-import { UserDataService } from '../_core/data/user-data.service';
-import { Album, Photo, User } from '../_core/types/server';
+import { AlbumDataService } from '@data/album-data.service';
+import { UserDataService } from '@data/user-data.service';
+import { SnackService } from '@services/snack.service';
+import { Album, Photo, User } from '@type/server';
 import { AlbumPickerComponent } from './album-picker/album-picker.component';
 
+/**
+ *  Manage data and UI state for photo module
+ */
+
 @Component({
-  selector: 'app-photos',
+  selector: 'cor-photos',
   templateUrl: './photos.component.html',
-  styleUrls: ['./photos.component.scss']
+  styleUrls: ['./photos.component.scss'],
 })
 export class PhotosComponent implements OnInit {
 
@@ -17,7 +22,7 @@ export class PhotosComponent implements OnInit {
   public users: User[];
   public albums: Album[];
   public photos: Photo[];
-  
+
   // UI state
   public selectedUser: User;
   public selectedAlbum: Album;
@@ -25,7 +30,8 @@ export class PhotosComponent implements OnInit {
 
   constructor(
     private userData: UserDataService,
-    private albumData: AlbumDataService
+    private albumData: AlbumDataService,
+    private snack: SnackService
   ) { }
 
   ngOnInit() {
@@ -74,6 +80,7 @@ export class PhotosComponent implements OnInit {
       this.users = await this.userData.getUsers();
     } catch (error) {
       console.log(error);
+      this.snack.default('Unable to show users');
     } finally {
       this.loading = false;
     }
@@ -85,6 +92,7 @@ export class PhotosComponent implements OnInit {
       this.photos = await this.albumData.getPhotosByAlbum(id);
     } catch (error) {
       console.log(error);
+      this.snack.default('Unable to show photos');
     } finally {
       this.loading = false;
     }
@@ -96,11 +104,10 @@ export class PhotosComponent implements OnInit {
       this.albums = await this.userData.getAlbumsByUser(userId);
     } catch (error) {
       console.log(error);
+      this.snack.default('Unable to show albums');
     } finally {
       this.loading = false;
     }
   }
-
-  
 
 }
