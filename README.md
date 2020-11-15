@@ -2,6 +2,14 @@
 
 This is a photo app prototype built with Angular v.9, Angular Material and using the JSON placeholder API
 
+### Live site: 
+Available on Heroku (this is on free dynos so can take 10-15 secs to load)
+https://cordant-photo-app.herokuapp.com/
+
+On GitHub Pages
+This is deployed as a static web app with requests to JSON placeholder from the client. However, due to CORS errors, this needs a browser plugin to work, such as CORS Unblock (https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en) 
+https://arwl2016.github.io/cordant-photo-client/ 
+
 ### To run locally
 - clone repo
 - `npm install`
