@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { environment } from 'src/environments/environment';
+// import { environment } from 'src/environments/environment';
 import { Photo } from '../types/server';
 
 /**
@@ -13,7 +13,7 @@ import { Photo } from '../types/server';
 })
 export class AlbumDataService {
 
-  readonly BASE_URL = `${environment.server}/albums`;
+  readonly BASE_URL = `/albums`;
 
   constructor(
     private http: HttpClient

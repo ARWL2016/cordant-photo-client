@@ -1,17 +1,21 @@
 {
   "name": "cordant-photo-client",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.16.3"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "build:prod": "ng build --configuration=production --aot=true",
+    "build:watch": "ng build --aot --watch",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "lite-server --baseDir=dist/cordant-photo-client",
+    "server": "nodemon server.js",
+    "dev": "concurrently  \"npm run server\" \"npm run build:watch\"",
     "build:deploy": "ng build --prod --base-href=https://arwl2016.github.io/cordant-photo-client/"
-    
   },
   "private": true,
   "dependencies": {
@@ -25,6 +29,11 @@
     "@angular/platform-browser": "~9.1.7",
     "@angular/platform-browser-dynamic": "~9.1.7",
     "@angular/router": "~9.1.7",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -38,6 +47,7 @@
     "@types/node": "^12.11.1",
     "angular-cli-ghpages": "^0.6.2",
     "codelyzer": "^5.1.2",
+    "concurrently": "^5.3.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~5.0.0",
